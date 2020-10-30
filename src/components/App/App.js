@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GalleryList from '../GalleryList/GalleryList';
 import axios from 'axios';
 import './App.css';
 
@@ -14,18 +15,19 @@ class App extends Component {
     errorMsg: null,
   };
 
+  componentDidMount() {
+    this.getImages();
+  }
+
   getImages() {
     axios({
       method: 'GET',
       url: '/gallery',
     })
       .then((response) => {
-        // {
-        //   data: []
-        // }
-        console.log(response);
+        console.log('hi', response.data, this.state.galleryList);
         this.setState({
-          songs: response.data,
+          galleryList: response.data,
         });
       })
       .catch((err) => {
@@ -36,15 +38,29 @@ class App extends Component {
       });
   }
 
+  putImages(image) {
+    axios({
+      type: 'PUT',
+      url: 'gallery/like/:id',
+      data: image, //sends taskObject data to server
+    })
+      .then(function (response) {
+        //getTaskData(); //sends data to get function
+      })
+      .catch(function (err) {
+        console.log('Post Error:', err); //indicates error
+        alert('Sorry, there was adding your task');
+      });
+  }
+
   render() {
+    console.log('gallery', this.state.galleryList);
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
-        <br />
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg" />
+        <GalleryList photos={this.state.galleryList} />
       </div>
     );
   }
