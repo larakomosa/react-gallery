@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
+import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import './App.css';
 
@@ -58,16 +59,20 @@ class App extends Component {
   };
 
   render() {
-    console.log('gallery', this.state.galleryList);
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">gradual gram</h1>
         </header>
-        <GalleryList
-          photos={this.state.galleryList}
-          updateLikes={this.updateLikes}
-        />
+        <table className="table">
+          <thead className="thead-dark"></thead>
+          <tbody>
+            <GalleryList
+              photos={this.state.galleryList}
+              updateLikes={this.updateLikes}
+            />
+          </tbody>
+        </table>
       </div>
     );
   }

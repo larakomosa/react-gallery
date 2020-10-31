@@ -30,7 +30,7 @@ class GalleryItem extends Component {
   render() {
     return (
       <div className="col-3">
-        {this.togglingDisplay()}
+        <div className="box">{this.togglingDisplay()}</div>
         <button onClick={() => this.props.updateLikes(this.props.item)}>
           LIKE
         </button>
