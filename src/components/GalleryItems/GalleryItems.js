@@ -15,7 +15,13 @@ class GalleryItem extends Component {
 
   togglingDisplay = () => {
     if (this.state.imageDisplay === true) {
-      return <img onClick={this.activateToggle} src={this.props.item.path} />;
+      return (
+        <img
+          onClick={this.activateToggle}
+          className="rounded"
+          src={this.props.item.path}
+        />
+      );
     } else {
       return <p onClick={this.activateToggle}>{this.props.item.description}</p>;
     }
@@ -23,7 +29,7 @@ class GalleryItem extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col-3">
         {this.togglingDisplay()}
         <button onClick={() => this.props.updateLikes(this.props.item)}>
           LIKE
