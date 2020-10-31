@@ -18,22 +18,23 @@ class GalleryList extends Component {
     );
   }
 }
-//   render() {
-//     // map method
+
+//render() {
 //     const listElements = this.props.photos.map(function (item, index) {
 //       return (
 //         <GalleryItem
+//           key={index}
 //           item={item}
-//           key={item.id}
 //           updateLikes={this.props.updateLikes}
 //         />
 //       );
 //     });
 //     return (
-//       <div>
+//       <div className="component-container">
 //         <ul>{listElements}</ul>
 //       </div>
 //     );
 //   }
 // }
+
 export default GalleryList;
