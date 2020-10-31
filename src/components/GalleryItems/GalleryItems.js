@@ -13,20 +13,14 @@ class GalleryItem extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.photos.map((item, index) => {
-            return (
-              <tr key={index}>
-                <td>
-                  <img src={item.path} />
-                  <td>{item.description}</td>
-                </td>
-                <td>
-                  {' '}
-                  This image has been liked <span>{item.likes}</span>
-                </td>
-              </tr>
-            );
-          })}
+          <td>
+            <img src={this.props.item.path} />
+            <td>{this.props.item.description}</td>
+          </td>
+          <td>
+            {' '}
+            This image has been liked <span>{this.props.item.likes}</span>
+          </td>
         </tbody>
       </table>
     );

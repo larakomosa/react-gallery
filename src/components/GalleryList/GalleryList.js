@@ -1,34 +1,15 @@
+import GalleryItem from '../GalleryItems/GalleryItems';
 import React, { Component } from 'react';
 
 class GalleryList extends Component {
   render() {
+    const listElements = this.props.photos.map(function (item, index) {
+      return <GalleryItem key={index} item={item} />;
+    });
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>
-              <button>LIKE</button>
-            </th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.props.photos.map((item, index) => {
-            return (
-              <tr key={index}>
-                <td>
-                  <img src={item.path} />
-                  <td>{item.description}</td>
-                </td>
-                <td>
-                  {' '}
-                  This image has been liked <span>{item.likes}</span>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className="component-container">
+        <ul>{listElements}</ul>
+      </div>
     );
   }
 }
