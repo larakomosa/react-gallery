@@ -14,11 +14,12 @@ class App extends Component {
     galleryList: [],
     errorMsg: null,
   };
+
   componentDidMount() {
     this.getImages();
   }
 
-  getImages() {
+  getImages = () => {
     axios({
       method: 'GET',
       url: '/gallery',
@@ -35,22 +36,23 @@ class App extends Component {
           errorMsg: 'Something went terribly wrong.',
         });
       });
-  }
+  };
 
-  putImages() {
+  updateLikes = (clicks) => {
     console.log('meow');
     axios({
       method: 'PUT',
-      url: 'gallery/like/:id',
+      url: `gallery/like/${clicks.id}`,
     })
-      .then(function (response) {
-        console.log(response.data);
+      .then((response) => {
+        this.getImages();
       })
-      .catch(function (err) {
-        console.log('Post Error:', err); //indicates error
-        alert('Sorry, there was adding your task');
+      .catch((error) => {
+        alert(`Put Error`);
+        console.log('put Error', error);
       });
-  }
+  };
+
   handleSubmit = (event) => {
     console.log('meow');
   };
@@ -62,7 +64,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
-        <GalleryList photos={this.state.galleryList} />
+        <GalleryList
+          photos={this.state.galleryList}
+          updateLikes={this.updateLikes}
+        />
       </div>
     );
   }
