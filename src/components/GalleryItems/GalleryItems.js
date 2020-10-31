@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class GalleryItem extends Component {
   render() {
     return (
       <table>
-        <thead>
-          <tr>
-            <th>
-              <button>LIKE</button>
-            </th>
-            <th></th>
-          </tr>
-        </thead>
         <tbody>
           <td>
             <img src={this.props.item.path} />
@@ -21,6 +14,7 @@ class GalleryItem extends Component {
             {' '}
             This image has been liked <span>{this.props.item.likes}</span>
           </td>
+          <button onClick={this.putImages}>LIKE</button>
         </tbody>
       </table>
     );

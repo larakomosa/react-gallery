@@ -14,7 +14,6 @@ class App extends Component {
     galleryList: [],
     errorMsg: null,
   };
-
   componentDidMount() {
     this.getImages();
   }
@@ -38,20 +37,23 @@ class App extends Component {
       });
   }
 
-  putImages(image) {
+  putImages() {
+    console.log('meow');
     axios({
-      type: 'PUT',
+      method: 'PUT',
       url: 'gallery/like/:id',
-      data: image, //sends taskObject data to server
     })
       .then(function (response) {
-        //getTaskData(); //sends data to get function
+        console.log(response.data);
       })
       .catch(function (err) {
         console.log('Post Error:', err); //indicates error
         alert('Sorry, there was adding your task');
       });
   }
+  handleSubmit = (event) => {
+    console.log('meow');
+  };
 
   render() {
     console.log('gallery', this.state.galleryList);
