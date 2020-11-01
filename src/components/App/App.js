@@ -60,20 +60,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">gradual gram</h1>
-        </header>
-        <table className="table">
-          <thead className="thead-dark"></thead>
-          <tbody>
+      <body>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">gradual gram</h1>
+          </header>
+          <div>
             <GalleryList
               photos={this.state.galleryList}
               updateLikes={this.updateLikes}
             />
-          </tbody>
-        </table>
-      </div>
+          </div>
+        </div>
+      </body>
     );
   }
 }

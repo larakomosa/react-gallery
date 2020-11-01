@@ -1,18 +1,16 @@
 .box {
-  height: 120px;
-  width: 120px;
-}
-
-button {
-  border: 5px teal;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(198, 240, 255, 0.856);
   margin-bottom: 10px;
-  width: 80px;
-  height: 35px;
-  background-color: #4f5b87;
-  color: peachpuff;
-  font-family: monospace;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+  color: darkslategray;
 }
 
 img {
+  height: 150px;
+  width: 150px;
   margin-bottom: 10px;
 }

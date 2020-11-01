@@ -23,7 +23,11 @@ class GalleryItem extends Component {
         />
       );
     } else {
-      return <p onClick={this.activateToggle}>{this.props.item.description}</p>;
+      return (
+        <p class="box" onClick={this.activateToggle}>
+          {this.props.item.description}
+        </p>
+      );
     }
   };
 
@@ -31,7 +35,10 @@ class GalleryItem extends Component {
     return (
       <div className="col-3">
         <div className="box">{this.togglingDisplay()}</div>
-        <button onClick={() => this.props.updateLikes(this.props.item)}>
+        <button
+          class="btn btn-outline-primary btn-sm"
+          onClick={() => this.props.updateLikes(this.props.item)}
+        >
           LIKE
         </button>
         <p>{this.props.item.likes} people love this!</p>
