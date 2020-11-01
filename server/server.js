@@ -12,6 +12,9 @@ app.use(express.static('build'));
 app.use('/gallery', gallery);
 
 /** ---------- START SERVER ---------- **/
-app.listen(PORT,  () => {
-    console.log('Listening on port: ', PORT);
+app.listen(PORT, () => {
+  console.log('Listening on port: ', PORT);
 });
+
+let taskRouter = require('./routes/gallery.router');
+app.use('/tasks', taskRouter);
