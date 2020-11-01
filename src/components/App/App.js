@@ -63,7 +63,8 @@ class App extends Component {
       <body>
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">gradual gram</h1>
+            <h1 className="App-title">...life in a glimpse</h1>
+            <p className="disclosure">** click photos for more details** </p>
           </header>
           <div>
             <GalleryList
