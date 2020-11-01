@@ -21,7 +21,7 @@ class App extends Component {
       url: '/gallery',
     })
       .then((response) => {
-        console.log('hi', response.data, this.state.galleryList);
+        //console.log('hi', response.data, this.state.galleryList);
         this.setState({
           galleryList: response.data, //updates state with data retrieved
         });
@@ -52,21 +52,19 @@ class App extends Component {
 
   render() {
     return (
-      <body>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">...life in a glimpse</h1>
-            <p className="disclosure">** click photos for more details** </p>
-          </header>
-          <div>
-            <GalleryList //imported component
-              photos={this.state.galleryList}
-              updateLikes={this.updateLikes}
-            />{' '}
-            {/* passes PUT function and GalleryList data to GalleryList component */}
-          </div>
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">...life in a glimpse</h1>
+          <p className="disclosure">** click photos for more details** </p>
+        </header>
+        <div>
+          <GalleryList //imported component
+            photos={this.state.galleryList}
+            updateLikes={this.updateLikes}
+          />{' '}
+          {/* passes PUT function and GalleryList data to GalleryList component */}
         </div>
-      </body>
+      </div>
     );
   }
 }

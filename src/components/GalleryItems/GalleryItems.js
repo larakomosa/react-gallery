@@ -19,7 +19,8 @@ class GalleryItem extends Component {
   togglingDisplay = () => {
     //Function renders element based on state
     if (this.state.imageDisplay === true) {
-      return ( //renders image
+      return (
+        //renders image
         <img
           onClick={this.activateToggle}
           className="rounded"
@@ -28,7 +29,8 @@ class GalleryItem extends Component {
         />
       );
     } else {
-      return (  //render description (false)
+      return (
+        //render description (false)
         <p className="text box" onClick={this.activateToggle}>
           {this.props.item.description}
         </p>
@@ -43,15 +45,18 @@ class GalleryItem extends Component {
         {/* designates that item will use 3/12 columns on page */}
         <div className="box">{this.togglingDisplay()}</div>
         <button
-          class="btn btn-outline-secondary btn-sm"
-          onClick={() => this.props.updateLikes(this.props.item)}   {/* upon click, put(updateLikes) function is passed to app.js. using props */}
+          className="btn btn-outline-secondary btn-sm"
+          onClick={() => this.props.updateLikes(this.props.item)}
         >
+          {' '}
+          {/* upon click, put(updateLikes) function is passed to app.js. using props */}
           love it!
         </button>
-        <h6>{this.props.item.likes} people love this!</h6>.   {/* shows like count on page*/}
+        <h6>{this.props.item.likes} people love this!</h6>.{' '}
+        {/* shows like count on page*/}
       </div>
     );
   }
 }
 
-export default GalleryItem;  //exports data 
+export default GalleryItem; //exports data
