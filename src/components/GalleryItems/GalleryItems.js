@@ -4,9 +4,12 @@ import React, { Component } from 'react';
 
 class GalleryItem extends Component {
   state = {
+    //sets initial state
     imageDisplay: true,
   };
   activateToggle = () => {
+    //changes state when an image is clicked
+
     console.log('toggle fired');
     this.setState({
       imageDisplay: this.state.imageDisplay === false,
@@ -14,12 +17,14 @@ class GalleryItem extends Component {
   };
 
   togglingDisplay = () => {
+    //Function renders element based on state
     if (this.state.imageDisplay === true) {
       return (
         <img
           onClick={this.activateToggle}
           className="rounded"
           src={this.props.item.path}
+          alt={this.props.item.description}
         />
       );
     } else {
