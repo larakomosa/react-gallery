@@ -50,7 +50,7 @@ class GalleryItem extends Component {
         >
           {' '}
           {/* upon click, put(updateLikes) function is passed to app.js. using props */}
-          love it!
+          love &#10084;
         </button>
         <h6>{this.props.item.likes} people love this!</h6>.{' '}
         {/* shows like count on page*/}
