@@ -69,7 +69,7 @@ const galleryItems = [
     id: 12,
     path: 'images/12.png',
     description:
-      'Weekly Garden haul from the garden of Mike Komosa, Summer 2020',
+      'Weekly garden haul from the garden of Mike Komosa, summer 2020',
     likes: 0,
   },
 ];
