@@ -16,5 +16,5 @@ app.listen(PORT, () => {
   console.log('Listening on port: ', PORT);
 });
 
-let taskRouter = require('./routes/gallery.router');
-app.use('/tasks', taskRouter);
+let router = require('./routes/gallery.router');
+app.use('/gallery', router);
