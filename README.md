@@ -11,7 +11,7 @@ User Interface:
 
 ## Usage
 
-For additional information on a given photo, click on the image and it will display a description. To return to the photo, click the description.
+To view additional information on a given photo, click on the image and it will display a description. Simply click the description to return to the photo.
 
 Remember to click the "Love it!" button for all your favorite images!
 
