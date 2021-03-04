@@ -11,7 +11,7 @@ class GalleryList extends Component {
           key={item.id}
           item={item}
           updateLikes={this.props.updateLikes}
-        /> //GalleryItem component
+        /> //GalleryItem component - props passed from item component down to main App js to connect with Like function.
       );
     });
     return (
